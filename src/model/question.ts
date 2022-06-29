@@ -40,4 +40,13 @@ export default class QuestionModel {
     }
     return false;
   }
+
+  convertToObject() {
+    return {
+      id: this.#id,
+      statement: this.#statement,
+      responses: this.#responses.map((resp) => resp.convertToObject()),
+      gotHit: this.#gotHit,
+    };
+  }
 }
