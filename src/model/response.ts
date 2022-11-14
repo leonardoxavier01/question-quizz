@@ -29,6 +29,10 @@ export default class ResponseModel {
     return this.#revealed;
   }
 
+  toReveal() {
+    return new ResponseModel(this.#value, this.#correct, true);
+  }
+
   convertToObject() {
     return {
       value: this.#value,
